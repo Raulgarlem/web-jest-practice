@@ -14,3 +14,13 @@
    const post = { title: "Título válido", content: "" };
    expect(isValidPost(post)).toBe(false);
  });
+
+ test("devuelve false cuando el título contiene solo espacios", () => {
+   const post = { title: "   ", content: "Contenido válido" };
+   expect(isValidPost(post)).toBe(false);
+ });
+
+ test("devuelve false cuando el contenido contiene solo espacios", () => {
+   const post = { title: "Título válido", content: "   " };
+   expect(isValidPost(post)).toBe(false);
+ });
